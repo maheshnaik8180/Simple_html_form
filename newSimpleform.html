@@ -91,13 +91,10 @@
         const  pwdError = document.querySelector('.pwd-Error');
         pwd.addEventListener('input',function()
         {
-           let pwdRegex = RegExp('^[a-zA-Z0-9]{8,}$');
-           if(pwdRegex.test(pwd.value))
+            let pwdRegex = RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()]).{8,}$');           if(pwdRegex.test(pwd.value))
                 pwdError.textContent = "";
             else  pwdError.textContent = "Please Enter Minimum 8 Characters";
         });
-
-
 
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
